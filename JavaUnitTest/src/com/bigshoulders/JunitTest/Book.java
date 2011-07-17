@@ -5,6 +5,7 @@ public class Book {
 	private String author="";
 	public Book(String title){
 		this.title=title;
+		this.author=null;
 	}
 	public Book(String title, String author){
 		this.title=title;

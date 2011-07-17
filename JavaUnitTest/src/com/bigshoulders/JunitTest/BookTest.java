@@ -13,16 +13,19 @@ public class BookTest {
 
 	@Test
 	public void testGetTitle() {
-		Book book = new Book("Dune");
-		assertTrue(book.getTitle().equals("Dune"));
+		String title="Jimmy Carter";
+		Book book = new Book(title);
+		assertTrue(book.getTitle().equals(title));
 		
 	}
 	@Test
 	public void testAuthor(){
-		Book book = new Book("Dune","Frank Herbert");
-		assertTrue(book.getAuthor().equals("Frank Herbert"));
+		String title ="Jimmy Carter Bio";
+		String author ="Jimmy Carter";
+		Book book = new Book(title,author);
+		assertTrue(book.getAuthor().equals(author));
 	}
-	@Ignore
+	
 	public static void assertEquals(Book expected,Book actual){
 		assertTrue(expected.getTitle().equals(actual.getTitle()) && expected.getAuthor().equals(actual.getAuthor()));
 		

@@ -14,10 +14,12 @@ public class FindABookViewTest {
 
 	@Before
 	public void setUp() throws Exception {
-		view = new FindABookView();
 		library= new Library();
+		view = new FindABookView(library);
+		
 		addBook= new AddBook(library);
 		addBook.add("The Dragons of Eden", "Carl Sagan");
+		addBook.add("Jimmy Carter", "Jimmy Carter");
 	}
 
 	@After
@@ -35,8 +37,16 @@ public class FindABookViewTest {
 	}
 	@Test
 	public void testFindButton(){
-		view.titleField.setText("The Dragons of Eden");
+		System.out.println("FindABookView Test");
+		System.out.println("NumBooks:"+library.getNumBooks());
+		System.out.println("BookList:");
+		library.printAllTitles();
+		view.titleField.setText("Jimmy Carter");
 		view.findButton.doClick();
+		//assertEquals("Failed to Find Correct Title","The Dragons of Eden",view.resultsLabel.getText());
+		assertEquals("Failed to Find Correct Title","Jimmy Carter",view.resultsLabel.getText());
+		System.out.println("FindABookView Test End");
+
 		
 		
 	}

@@ -9,8 +9,8 @@ public class FindABook {
 	}
 	
 	public Book getBookByTitle(String title){
-		library.getBooksByTitle(title);
-		return new Book(title);
+		return library.getBooksByTitle(title);
+		//return new Book(title);
 	}
 
 }

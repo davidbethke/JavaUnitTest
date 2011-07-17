@@ -18,6 +18,8 @@ public class FindABookTest {
 		library = new Library();
 		addBook = new AddBook(library);
 		addBook.add("The Dragons of Eden","Carl Sagan");
+		addBook.add("Jimmy Carter Bio", "Jimmy Carter");
+		addBook.add("Jimmy Carter", "Jimmy Carter");
 		findABook=new FindABook(library);
 
 	}
@@ -31,7 +33,14 @@ public class FindABookTest {
 		
 		Book book = findABook.getBookByTitle("The Dragons of Eden");
 		assertEquals("The Dragons of Eden", book.getTitle());
+		assertEquals("Jimmy Carter fails","Jimmy Carter",library.getBooksByTitle("Jimmy Carter").getTitle());
 		
+		
+	}
+	@Test
+	public void testFindABook2(){
+		assertEquals("Jimmy Carter Bio fails","Jimmy Carter Bio",library.getBooksByTitle("Jimmy Carter Bio").getTitle());
+
 	}
 
 }

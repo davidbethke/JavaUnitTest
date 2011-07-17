@@ -16,6 +16,7 @@ public class AddBookTest {
 	}
 	@Test
 	public void testAddBook(){
+		System.out.println("StartAddBookTest");
 		Library library = new Library();
 		AddBook addBook = new AddBook(library);
 		addBook.add("The Dragons of Eden","Carl Sagan");

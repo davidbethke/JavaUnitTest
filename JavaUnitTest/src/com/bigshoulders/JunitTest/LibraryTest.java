@@ -10,14 +10,16 @@ import org.junit.Ignore;
 
 public class LibraryTest {
 	private Library library;
-	private Book book1, book2;
+	private Book book1, book2,book3;
 	@Before
 	public void setUp(){
 		library = new Library();
 		book1=new Book("Dune","Frank Herbert");
 		book2=new Book("Solaris","Stanislaw Lem");
+		book3=new Book("Jimmy Carter Bio","Jimmy Carter");
 		library.addBook(book1);
 		library.addBook(book2);
+		library.addBook(book3);
 		
 	}
 	@After
@@ -39,9 +41,15 @@ public class LibraryTest {
 
 		
 	}
+	@Test 
+	public void testGetBooksByTitle(){
+		assertEquals("Jimmy Carter Fail","Jimmy Carter Bio",book3.getTitle());
+		assertEquals("Dune fails","Dune", library.getBooksByTitle("Dune").getTitle());
+		//assertEquals("Jimmy Carter Should Fail!","James Carter",library.getBooksByTitle("Jimmy Carter Bio").getTitle());
+	}
 	@Test
 	public void testLibrarySize(){
-		assertTrue(library.getNumBooks() ==2);
+		assertTrue(library.getNumBooks() ==3);
 	}
 	@Test
 	public void testRemoveBook(){

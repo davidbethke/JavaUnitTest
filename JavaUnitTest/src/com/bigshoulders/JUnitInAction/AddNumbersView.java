@@ -1,5 +1,6 @@
 package com.bigshoulders.JUnitInAction;
 
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,6 +9,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class AddNumbersView extends JFrame {
@@ -19,17 +21,19 @@ public class AddNumbersView extends JFrame {
 	JButton addButton;
 	JButton clearButton;
 	AddNumbers addNumbers;
+	JPanel panel;
 	
 	public AddNumbersView(final AddNumbers addNumbers){
 		super("CalculatorAdd");
 		this.addNumbers=addNumbers;
 		setUp();
-		
+		this.setVisible(true);
 		
 		
 	}
 	private void setUp(){
 		Container content = this.getContentPane();
+		this.panel= new JPanel();
 		number1= new JTextField("number1");
 		number2= new JTextField("number2");
 		result= new JLabel("result");
@@ -44,11 +48,12 @@ public class AddNumbersView extends JFrame {
 			}
 		});
 		clearButton= new JButton("Clear");
-		content.add(number1);
-		content.add(number2);
-		content.add(result);
-		content.add(addButton);
-		content.add(clearButton);
+		panel.add(addButton,BorderLayout.SOUTH);
+		panel.add(clearButton,BorderLayout.SOUTH);
+		panel.add(number1);
+		panel.add(number2);
+		panel.add(result);
+		content.add(panel);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(200, 300);
 		

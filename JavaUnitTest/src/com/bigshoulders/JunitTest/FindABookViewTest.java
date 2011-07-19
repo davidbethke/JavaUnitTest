@@ -44,7 +44,7 @@ public class FindABookViewTest {
 		view.titleField.setText("Jimmy Carter");
 		view.findButton.doClick();
 		//assertEquals("Failed to Find Correct Title","The Dragons of Eden",view.resultsLabel.getText());
-		assertEquals("Failed to Find Correct Title","Jimmy Carter",view.resultsLabel.getText());
+		assertEquals("Failed to Find Correct Title","Jimmy Carter,Jimmy Carter",view.resultsLabel.getText());
 		System.out.println("FindABookView Test End");
 
 		

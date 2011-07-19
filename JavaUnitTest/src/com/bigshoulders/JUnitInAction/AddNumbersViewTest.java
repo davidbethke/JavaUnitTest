@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import junit.framework.TestSuite;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -48,5 +50,6 @@ public class AddNumbersViewTest {
 		view.addButton.doClick();
 		assertEquals("Add fail 1+2", "3.0",view.result.getText());
 	}
+	
 
 }

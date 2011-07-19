@@ -1,6 +1,7 @@
 package com.bigshoulders.JUnitInAction;
 
 public class Account {
+
 	 long balance;
 	 Owner owner;
 	public Account(Owner owner,long balance){

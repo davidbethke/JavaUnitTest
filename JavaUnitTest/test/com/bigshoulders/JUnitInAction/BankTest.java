@@ -31,5 +31,12 @@ public class BankTest {
 		
 		
 	}
+	@Test
+	public void testAddMultipleAccounts(){
+		bank.addAccount(account);
+		bank.addAccount(account);
+		bank.addAccount(account);
+		assertEquals("AddMultipleAccounts Fails",3,bank.getNumberOfAccounts());
+	}
 
 }

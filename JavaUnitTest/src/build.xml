@@ -36,8 +36,9 @@
 		<junit printsummary="yes" haltonerror="no" haltonfailure="no" fork="no">
 			<formatter type="plain" usefile="false"/>
 			<test name="com.bigshoulders.JUnitInAction.BankTests"/>
-			<classpath refid="junit4"/>
 			<classpath>
+				<pathelement location ="/Users/davidbethke/junit.jar"/>
+				<pathelement location="/Users/davidbethke/springsource/sts-2.6.0.SR1/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
 				<pathelement location="${target.classes.java.dir}"/>
 				<pathelement location="${target.classes.test.dir}"/>
 			</classpath>

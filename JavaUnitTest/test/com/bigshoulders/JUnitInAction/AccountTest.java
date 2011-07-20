@@ -3,7 +3,7 @@ package com.bigshoulders.JUnitInAction;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
-import org.junit.Ignore;
+
 
 public class AccountTest {
 	long balance;
@@ -34,10 +34,12 @@ public class AccountTest {
 		account.debitBalance(debit);
 		assertEquals("DebitBalance Fails",500,account.getBalance());
 	}
+	/*
 	@Ignore
 	public void testAddAccountOwner(){
 		account.addOwner(Owner owner);
 		assertEquals("AddAccount Owner fails",owner.getName(),account.getName());
 	}
+	*/
 
 }

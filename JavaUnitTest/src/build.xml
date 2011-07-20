@@ -34,7 +34,7 @@
 	
 	<target name="test" depends="compile">
 		<junit printsummary="yes" haltonerror="no" haltonfailure="no" fork="no">
-			<formatter type="xml" usefile="false"/>
+			<formatter type="xml" usefile="true"/>
 			<test name="com.bigshoulders.JUnitInAction.BankTests"/>
 			<classpath>
 				<pathelement location ="/Users/davidbethke/junit.jar"/>

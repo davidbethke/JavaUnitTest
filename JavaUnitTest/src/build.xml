@@ -32,6 +32,8 @@
 			<classpath>
 				<pathelement location="${target.classes.java.dir}"/>
 				<pathelement location="${target.classes.test.dir}"/>
+				<pathelement location="/Users/davidbethke/springsource/sts-2.6.0.SR1/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+				<pathelement location ="/Users/davidbethke/Downloads/eclipse 2/plugins/org.junit4_4.5.0.v20090423/junit.jar"/>
 			</classpath>
 		</junit>
 	</target>

@@ -21,8 +21,9 @@
 }
 
 #header h1 { margin-left: 5%;
-			
-			font-size:3em
+			color:darkgreen;
+			font-size:2em;
+			text-align:center;
 			 }
 
 #navigation
@@ -34,6 +35,7 @@
 #navigation h3{
 		font-size:1.0em;
 		color:gray;
+		text-align:center;
 		}
 }
 
@@ -65,7 +67,7 @@
 {
 	float: left;
 	width: 100%;
-	background: #FFF url(layout-two-liquid-background.gif) repeat-y 68% 0;
+	background-color:#fff;
 }
 
 #content
@@ -76,6 +78,7 @@
 	padding: 20px 0;
 	margin: 0 0 0 4%;
 	display: inline;
+	background-color:lightgray;
 }
 
 #content h2 { margin-left:20%;

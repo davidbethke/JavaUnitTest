@@ -12,7 +12,7 @@
 }
 
 #header h1 { margin: 0;
-			color:black;
+			color:darkgreen;
     		font-style:italic;
 			 }
 
@@ -20,33 +20,9 @@
 {
 	float: left;
 	width: 100%;
-	background: #333;
+	background: darkgreen;
 }
-
-#navigation ul
-{
-	margin: 0;
-	padding: 0;
-}
-
-#navigation ul li
-{
-	list-style-type: none;
-	display: inline;
-}
-
-#navigation li a
-{
-	display: block;
-	float: left;
-	padding: 5px 10px;
-	color: #fff;
-	text-decoration: none;
-	border-right: 1px solid #fff;
-}
-
-#navigation li a:hover { background: #383; }
-
+/
 #content-container
 {
 	float: left;
@@ -63,6 +39,11 @@
 	margin: 0 0 0 4%;
 	display: inline;
 }
+h3{
+	color:lightGreen;
+	font-size:1.5em;
+	
+}
 h2{
 	color:gray;
 	font-style:italic;
@@ -71,6 +52,7 @@ h2{
 h4{
 	color:gray;
 	font-style:italic;
+	font-size:.8em;
 }
 
 #content h2 { margin: 0; 

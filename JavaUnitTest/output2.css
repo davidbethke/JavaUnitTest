@@ -7,27 +7,30 @@
 
 #header
 {
-	background: #ccc;
+	background:lightgray;
 	padding: 20px;
 }
 
 #header h1 { margin: 0;
-			color:darkgreen;
+			color:black;
+			text-align:center;
     		font-style:italic;
+			font-size:2.5em;
 			 }
 
 #navigation
 {
 	float: left;
 	width: 100%;
-	background: darkgreen;
+	padding:10px;
+	background:gray;
 }
 /
 #content-container
 {
 	float: left;
 	width: 100%;
-	background: #FFF url(layout-two-liquid-background.gif) repeat-y 68% 0;
+	background: #FFF url('layout-two-liquid-background.gif') repeat-y 68% 0;
 }
 
 #content
@@ -39,14 +42,25 @@
 	margin: 0 0 0 4%;
 	display: inline;
 }
+table {
+		margin-left:0px;
+		margin-right:auto;
+		width:100%;
+		text-align:right;
+		vertical-align:bottom;
+		
+}
 h3{
-	color:lightGreen;
+	color:lightgray;
 	font-size:1.5em;
 	
 }
 h2{
-	color:gray;
+	color:darkgray;
 	font-style:italic;
+	font-size:.8em;
+	margin-left:5%;
+	
 	
 }
 h4{
@@ -60,9 +74,11 @@ h4{
         	font-style:bold;
 			}
 
+
 #aside
 {
 	float: right;
+	background:gray;
 	width: 26%;
 	padding: 0px 0;
 	margin: 0 3% 0 0;

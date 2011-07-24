@@ -8,7 +8,7 @@
 			background-color:lightgray;
 			border: 2px solid black;
 			width:60%;
-			
+			padding 20px;
 			margin-left:20%;
 			}
 			
@@ -23,6 +23,7 @@
 #header h1 { margin-left: 5%;
 			color:black;
 			font-size:2.5em;
+			font-style:italic;
 			letter-spacing:15px;
 			text-align:center;
 			 }
@@ -69,7 +70,8 @@
 {
 	float: left;
 	width: 100%;
-	background: #FFF url(layout-two-liquid-background.gif) repeat-y 68% 0;
+	background: #FFF url('layout-two-liquid-background.gif') repeat-y 68% 0;
+
 }
 
 #content
@@ -110,6 +112,8 @@
 	width: 26%;
 	padding: 0px 0;
 	margin: 0 3% 0 0;
+			
+
 	display: inline;
 }
 

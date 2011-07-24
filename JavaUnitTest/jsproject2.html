@@ -8,10 +8,7 @@
 <script type="text/javascript">
 <!--
 
-    //outputResults();
-    
-
-document.getElementById('TestPane').style.visibility == 'hidden';
+   
 function fNameFocus(){
 	document.getElementById('firstName').focus();
 }
@@ -21,7 +18,7 @@ function openWindow(){
 	
 }
 function checkCreateText(outWnd){
-	//window.open("about:blank","","width=900");
+	
 	//form elements
 	var fName=document.getElementById('firstName').value;
     var lName=document.getElementById('lastName').value;
@@ -34,33 +31,21 @@ function checkCreateText(outWnd){
     var hobbies=document.getElementById('hobbies').value;
 	
 	//create some text nodes
-   
     var name=outWnd.document.createTextNode(fName+" "+lName);
     var address=outWnd.document.createTextNode(address+" "+city+" "+zip+" "+country);
 	var occupation=outWnd.document.createTextNode(occupation);
     var education=outWnd.document.createTextNode(education);
     var hobbies=outWnd.document.createTextNode(hobbies);
-
-	
-
-
-	
 	//append nodes to the template
-    
     outWnd.document.getElementById('name').appendChild(name);
     outWnd.document.getElementById('address').appendChild(address);
 	outWnd.document.getElementById('occupation').appendChild(occupation);
     outWnd.document.getElementById('education').appendChild(education);
     outWnd.document.getElementById('hobbies').appendChild(hobbies);
-	
-	//crappy height fix?
-	var leftCol= outWnd.document.getElementById('content-container');
-	var rightCol= outWnd.document.getElementById('asideContent');
-	var leftColHeight= leftCol.offsetHeight;
-	rightCol.style.height='400';
+	outWnd.document.getElementById('tableOccupation').height='10';
+	outWnd.document.getElementById('tableEducation').height='10';
 
 	
-
 }
     
 function validate(){
@@ -75,7 +60,7 @@ function validate(){
     var education=document.getElementById('education');
     var hobbies=document.getElementById('hobbies');
 	//test only
-	
+	/*
 	fName.value='David';
 	lName.value='Bethke';
 	address.value='8009 Fierro Cove';
@@ -85,13 +70,14 @@ function validate(){
 	occupation.value='Engineer';
 	education.value='High School';
 	hobbies.value='Motorbikes, Computers, Reading, Traveling, and Finding a Job!';
-	
+	*/
 	
     //check empty
 	var allPass=false;
     for(var i=0; i < document.forms[0].elements.length; i++){
        (! checkEmpty(f.elements[i],'Check Empty '+ f.elements[i].name))?emPass=false:emPass=true;       
     }
+	//check other stuff
     (!checkLettersOnly(fName,'First Name letters only'))?flPass=false:flPass=true;
     (!checkLettersOnly(lName,'Last Name letters only'))?llPass=false:llPass=true;
     (!checkAlphaNumeric(address,'Address letters/numbers only'))?adPass=false:adPass=true;
@@ -110,27 +96,24 @@ function validate(){
     return false;  
 }
 function outputResults(){
-    outputWindow= window.open("output2.html","Calling Card","width=600, height=550,scrollbars=0,toolbar=0,resizeable=0,menubar=0,location=0");
+    outputWindow= window.open("output2.html","Personal Calling Card","width=600, height=550,scrollbars=0,toolbar=0,resizeable=0,menubar=0,location=0");
     setTimeout("checkCreateText(outputWindow)",1000);
 	
-    //checkCreateText();
-    
 }
 
 function checkEmpty(element,message){
     if(element.value.length == 0){
-        return showAlert(element,message);
-		
+        return showAlert(element,message);		
     }
     return true;
 }
+
 function checkNumbersOnly(element,message){
     var numericExpression= /^[0-9]+$/;
     if(element.value.match(numericExpression)){
         return true;
     }else{
-       return showAlert(element,message);
-        
+       return showAlert(element,message);        
     }
 }
 function checkLettersOnly(element,message){
@@ -178,16 +161,6 @@ function showAlert(element,message){
     element.focus();
     return false;
 }
-function toggleTestPane(){
-    if(document.getElementById('TestPane').style.visibility == 'hidden'){
-        document.getElementById('TestPane').style.visibility='visible';
-    }else{
-        document.getElementById('TestPane').style.visibility='hidden';
-    }
-}
-
-    
-
 //-->
 </script>
 </head><body onload="fNameFocus();">
@@ -234,22 +207,17 @@ function toggleTestPane(){
         		<input value="Create Your Calling Card" type="submit">
 		</div>
 		</form></div>
-		<div id="aside">
-			
-			<h2>
-				Calling Cards
-			</h2>
-			<p>Fill out your information on the left to create your Personal Calling card</p>
-			<p>
-Use them for your Family, Friends, Business Associates. Be your own Facebook.			</p>
-		<p> Hand them out at</p>
-		<ul>
-			<li type="square">Parties</li>
-			<li type="square">Business Meeings</li>
-			<li type="square">Family Get Togethers</li>
-			<li type="square">At the Beach!</li>
-		</ul>
-		
+		<div id="aside">	
+			<h2>Calling Cards</h2>
+			<p>Fill out your information on the left to create your Personal Calling Card</p>
+			<p>Use them for your Family, Friends, Business Associates. Be your own Facebook.			</p>
+			<p> Hand them out at</p>
+			<ul>
+				<li type="square">Parties</li>
+				<li type="square">Business Meeings</li>
+				<li type="square">Family Get Togethers</li>
+				<li type="square">At the Beach!</li>
+			</ul>
 		</div>
 		<div id="footer">
 			<ul><li>About Us</li><li>Contact</li><li>Careers</li><li>Calling Card Inc. &copy 2011</li></ul>

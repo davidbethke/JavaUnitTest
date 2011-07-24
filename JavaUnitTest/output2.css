@@ -2,9 +2,7 @@
 {
 	margin: 0 auto;
 	width: 100%;
-	/*
-	background: #fff;
-	*/
+	
 	background: #AAA url(/layout-two-liquid-background.gif) repeat-y 68% 0 ;
 }
 
@@ -20,7 +18,15 @@
     		font-style:italic;
 			font-size:2.5em;
 			 }
-
+table{
+	width:80%;
+	text-align:left;
+	vertical-align:bottom;
+}
+td{
+	padding:0px;
+	height:20px;
+}
 #navigation
 {
 	float: left;
@@ -34,21 +40,18 @@
 	float: left;
 	width: 100%;
 	border:2px solid black;
-	/*
-	background: #FFF url('layout-two-liquid-background.gif') repeat-y 68% 0;
-	*/
-
+	
 }
 
 #content 
 {
 	clear: left;
 	float: left;
-	border:2px dashed gray;
+	
 	width: 60%;
 	padding: 10px 0;
 	margin: 0 0 0 4%;
-	background:white;
+	
 	display: inline;
 }
 #occuEdu{
@@ -56,73 +59,16 @@
 	width:100%;
 	
 }
-#propEdu #valEdu
-	{
-		border:5px solid black;
-		display:inline;
-	}
-table{
-		width:90%;
-		
-		
-		vertical-align:bottom;
-}
-td{
-	padding:2px;
-}
-tr{
-	padding:2px;
-}
-	/*
-#valEdu{
-		float:right;
-		border:2px dashed blue;
-		margin-bottom:10px;
-		width:30%;
-}
-#propEdu{
-		clear:left;
-		float:left;
-		border:5px solid blue;
-		width 70%;
-		margin-bottom:25px;
-}
-#propOccu #valOccu{
-		border:5px solid black;
-		display:inline;
-	
-} 
-#propOccu{
-		clear:left;
-		float:left;
-		border:5px solid red;
-		width 70%;
-		margin-top:25px;
-	
-}
-#valOccu{
-		float:right;
-		border:2px dashed red;
-		margin-top:0px;
-		margin-left:0px;
-		
-}
-*/
-
-/*
-#education{
-		float:right;
-		
-}
-#occupation{
-		float:right;
-}
-*/
 h3{
 	color:black;
 	font-size:1.5em;
 	font-style:italic;
 	
+}
+h6{
+	color:#111;
+	font-size:1.2em;
+	font-style:italic;
 }
 h2{
 	color:darkgray;
@@ -152,26 +98,24 @@ h5{
 #aside 
 {
 	float: right;
-	
-	border:2px dashed red;
 	width: 30%;
 	height=120%;
-	margin: 0 3% 0 0;
+	margin-right:0px;
 	
 	
 	
 	display: inline;
 }
 #asideContent{
-		float:right;
-		width:100%;
-		border:2px solid blue;
+		float:left;
+		width:80%;
+		text-align:left;
 		padding:10px 0;
 		margin-top:auto;
 		margin-bottom:auto;
-		margin-right:0px;
+		
 		font-size:.8em;
-		vertical-align:bottom;
+		vertical-align:top;
 		
 }
 #values{

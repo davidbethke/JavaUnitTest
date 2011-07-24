@@ -5,7 +5,7 @@
 	background: #fff;
 }
 .formBorder{
-			background-color:lightgray;
+			background-color:#e3e3e3;
 			border: 2px solid black;
 			width:60%;
 			padding 20px;
@@ -16,12 +16,12 @@
 
 #header
 {
-	background: #ccc;
+	
 	padding: 20px;
 }
 
 #header h1 { margin-left: 5%;
-			color:black;
+			color:#333;
 			font-size:2.5em;
 			font-style:italic;
 			letter-spacing:15px;
@@ -55,18 +55,6 @@
 	display: inline;
 }
 
-#navigation li a
-{
-	display: block;
-	float: left;
-	padding: 5px 10px;
-	color: #fff;
-	text-decoration: none;
-	border-right: 1px solid #fff;
-}
-
-#navigation li a:hover { background: #383; }
-
 #content-container
 {
 	float: left;
@@ -90,23 +78,7 @@
 			color:gray;
 			font-style:italic;
 			 }
-			 /*
-#asideContent {
-			margin-top:20%;
-			margin-left:0px;
-			margin-right:auto;
-			width:100%;
-			padding:0px 0;
-			
-}
-
-#asideContent h2{
-				font-style:italic;
-				color:gray;
-				
-}
-*/
-
+			 
 #aside
 {
 	float: right;

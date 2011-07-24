@@ -42,14 +42,15 @@
 		}
 }
 
-#navigation ul
+#footer ul
 {
 	margin: 0;
 	padding: 0;
 }
 
-#navigation ul li
+#footer ul li
 {
+	padding:20px;
 	list-style-type: none;
 	display: inline;
 }
@@ -127,7 +128,7 @@
 	clear: left;
 	background: #ccc;
 	text-align: center;
-	padding: 20px;
+	padding: 5px;
 	height: 1%;
 }
 

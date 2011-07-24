@@ -12,6 +12,9 @@
     
 
 document.getElementById('TestPane').style.visibility == 'hidden';
+function fNameFocus(){
+	document.getElementById('firstName').focus();
+}
 function openWindow(){
 		window.open("about:blank","test","width=900");
 
@@ -29,6 +32,7 @@ function checkCreateText(outWnd){
     var occupation=document.getElementById('occupation').value;
     var education=document.getElementById('education').value;
     var hobbies=document.getElementById('hobbies').value;
+	
 	//create some text nodes
    
     var name=outWnd.document.createTextNode(fName+" "+lName);
@@ -38,13 +42,24 @@ function checkCreateText(outWnd){
     var hobbies=outWnd.document.createTextNode(hobbies);
 
 	
+
+
+	
 	//append nodes to the template
     
     outWnd.document.getElementById('name').appendChild(name);
     outWnd.document.getElementById('address').appendChild(address);
-	 outWnd.document.getElementById('occupation').appendChild(occupation);
+	outWnd.document.getElementById('occupation').appendChild(occupation);
     outWnd.document.getElementById('education').appendChild(education);
     outWnd.document.getElementById('hobbies').appendChild(hobbies);
+	
+	//crappy height fix?
+	var leftCol= outWnd.document.getElementById('content-container');
+	var rightCol= outWnd.document.getElementById('asideContent');
+	var leftColHeight= leftCol.offsetHeight;
+	rightCol.style.height='400';
+
+	
 
 }
     
@@ -71,31 +86,32 @@ function validate(){
 	education.value='High School';
 	hobbies.value='Motorbikes, Computers, Reading, Traveling, and Finding a Job!';
 	
-	//
-
- //var checkedTxt=document.createTextNode('checked');
-    //document.getElementById('form1').appendChild(checkedTxt);
+	
     //check empty
+	var allPass=false;
     for(var i=0; i < document.forms[0].elements.length; i++){
-        //f.elements[i].appendChild(checkedTxt);
-        checkEmpty(f.elements[i],'Check Empty '+ f.elements[i].name);      
+       (! checkEmpty(f.elements[i],'Check Empty '+ f.elements[i].name))?emPass=false:emPass=true;       
     }
-    checkLettersOnly(fName,'Last Name letters only');
-    checkLettersOnly(lName,'First Name letters only');
-    checkAlphaNumeric(address,'Address letters/numbers only');
-    checkLettersOnly(city,'City letters only');
-    checkNumbersOnly(zip,'Zip numbers Only');
-    checkLength(zip,5,5,'Zip must be 5 numbers');
-    checkSelection(country,'Select Your Country','Pick A Country from the List');
-    checkLettersOnly(occupation,'Occupation letters only');
-    checkSelection(education,'Enter Highest Education','Pick education from the List');
-    checkLength(hobbies,1,200,'Max 200 chars');
-	outputResults();
+    (!checkLettersOnly(fName,'First Name letters only'))?flPass=false:flPass=true;
+    (!checkLettersOnly(lName,'Last Name letters only'))?llPass=false:llPass=true;
+    (!checkAlphaNumeric(address,'Address letters/numbers only'))?adPass=false:adPass=true;
+    (!checkLettersOnly(city,'City letters only'))?ciPass=false:ciPass=true;
+    (!checkNumbersOnly(zip,'Zip numbers Only'))?ziPass=false:ziPass=true;
+    (!checkLength(zip,5,5,'Zip must be 5 numbers'))?zilPass=false:zilPass=true;
+    (!checkSelection(country,'Select Your Country','Pick A Country from the List'))?coPass=false:coPass=true;
+    (!checkLettersOnly(occupation,'Occupation letters only'))?ocPass=false:ocPass=true;
+    (!checkSelection(education,'Enter Highest Education','Pick education from the List'))?edPass=false:edPass=true;
+    (!checkLength(hobbies,1,200,'Max 200 chars'))?hoPass=false:hoPass=true;
+	allPass= emPass&&flPass&&llPass&&adPass&&ciPass&&ziPass&&zilPass&&coPass&&ocPass&&edPass&&hoPass;
+	
+	if (allPass) {
+		outputResults();
+	}
     return false;  
 }
 function outputResults(){
     outputWindow= window.open("output2.html","Calling Card","width=600, height=550,scrollbars=0,toolbar=0,resizeable=0,menubar=0,location=0");
-    setTimeout("checkCreateText(outputWindow)",2000);
+    setTimeout("checkCreateText(outputWindow)",1000);
 	
     //checkCreateText();
     
@@ -103,7 +119,8 @@ function outputResults(){
 
 function checkEmpty(element,message){
     if(element.value.length == 0){
-        showAlert(element,message);
+        return showAlert(element,message);
+		
     }
     return true;
 }
@@ -112,7 +129,7 @@ function checkNumbersOnly(element,message){
     if(element.value.match(numericExpression)){
         return true;
     }else{
-        showAlert(element,message);
+       return showAlert(element,message);
         
     }
 }
@@ -121,14 +138,14 @@ function checkLettersOnly(element,message){
     if(element.value.match(letterExpression)){
         return true;
     }else{
-        showAlert(element,message);
+        return showAlert(element,message);
     }
 }
 function checkLength(element,minVal, maxVal,message){
     if(element.value.length >= minVal && element.value.length <= maxVal){
         return true;
     }else{
-        showAlert(element,message);
+        return showAlert(element,message);
     }
 }
 function checkEmail(element,message){
@@ -136,13 +153,13 @@ function checkEmail(element,message){
     if(element.value.match(validExpression)){
         return true;
     }else{
-        showAlert(element,message);
+        return showAlert(element,message);
     }
 }
 function checkSelection(element,badMatch,message){
     
     if(element.value==badMatch){
-        showAlert(element,message);
+        return showAlert(element,message);
     }else{
         return true;
     }
@@ -152,15 +169,12 @@ function checkAlphaNumeric(element,message){
     if(element.value.match(alphaNumeric)){
         return true;
     }else{
-        showAlert(element,message);
+        return showAlert(element,message);
     }
 }
 
 function showAlert(element,message){
     alert(message);
-    //var errorTxt=document.createTextNode("*");
-    //element.appendChild(errorTxt);
-    //element.innerHTML='*";
     element.focus();
     return false;
 }
@@ -176,7 +190,7 @@ function toggleTestPane(){
 
 //-->
 </script>
-</head><body>
+</head><body onload="fNameFocus();">
 	<div id="container">
 	<div id="header">
 		<h1>
@@ -218,7 +232,6 @@ function toggleTestPane(){
         	<p>Hobbies:(max length 200 chars)</p>
         		<textarea id="hobbies" name="hobbies" rows="10" cols="40"></textarea>
         		<input value="Create Your Calling Card" type="submit">
-        	
 		</div>
 		</form></div>
 		<div id="aside">
@@ -239,7 +252,7 @@ Use them for your Family, Friends, Business Associates. Be your own Facebook.			
 		
 		</div>
 		<div id="footer">
-			About Us		Contact			Careers          								 Calling Card Inc. &copy 2011
+			<ul><li>About Us</li><li>Contact</li><li>Careers</li><li>Calling Card Inc. &copy 2011</li></ul>
 		</div>
 	</div>
 </div>

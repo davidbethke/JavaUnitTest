@@ -2,7 +2,10 @@
 {
 	margin: 0 auto;
 	width: 100%;
+	/*
 	background: #fff;
+	*/
+	background: #AAA url(/layout-two-liquid-background.gif) repeat-y 68% 0 ;
 }
 
 #header
@@ -13,7 +16,7 @@
 
 #header h1 { margin: 0;
 			color:black;
-			text-align:center;
+			text-align:left;
     		font-style:italic;
 			font-size:2.5em;
 			 }
@@ -30,29 +33,95 @@
 {
 	float: left;
 	width: 100%;
+	border:2px solid black;
+	/*
 	background: #FFF url('layout-two-liquid-background.gif') repeat-y 68% 0;
+	*/
+
 }
 
-#content
+#content 
 {
 	clear: left;
 	float: left;
+	border:2px dashed gray;
 	width: 60%;
 	padding: 10px 0;
 	margin: 0 0 0 4%;
+	background:white;
 	display: inline;
 }
-table {
-		margin-left:0px;
-		margin-right:auto;
-		width:100%;
-		text-align:right;
+#occuEdu{
+	float:left;
+	width:100%;
+	
+}
+#propEdu #valEdu
+	{
+		border:5px solid black;
+		display:inline;
+	}
+table{
+		width:90%;
+		
+		
 		vertical-align:bottom;
+}
+td{
+	padding:2px;
+}
+tr{
+	padding:2px;
+}
+	/*
+#valEdu{
+		float:right;
+		border:2px dashed blue;
+		margin-bottom:10px;
+		width:30%;
+}
+#propEdu{
+		clear:left;
+		float:left;
+		border:5px solid blue;
+		width 70%;
+		margin-bottom:25px;
+}
+#propOccu #valOccu{
+		border:5px solid black;
+		display:inline;
+	
+} 
+#propOccu{
+		clear:left;
+		float:left;
+		border:5px solid red;
+		width 70%;
+		margin-top:25px;
+	
+}
+#valOccu{
+		float:right;
+		border:2px dashed red;
+		margin-top:0px;
+		margin-left:0px;
 		
 }
+*/
+
+/*
+#education{
+		float:right;
+		
+}
+#occupation{
+		float:right;
+}
+*/
 h3{
-	color:lightgray;
+	color:black;
 	font-size:1.5em;
+	font-style:italic;
 	
 }
 h2{
@@ -68,6 +137,11 @@ h4{
 	font-style:italic;
 	font-size:.8em;
 }
+h5{
+	color:black;
+	font-style:italic;
+	font-size:1.0em;
+}
 
 #content h2 { margin: 0; 
 			color:gray;
@@ -75,14 +149,41 @@ h4{
 			}
 
 
-#aside
+#aside 
 {
 	float: right;
-	background:gray;
-	width: 26%;
-	padding: 0px 0;
+	
+	border:2px dashed red;
+	width: 30%;
+	height=120%;
 	margin: 0 3% 0 0;
+	
+	
+	
 	display: inline;
+}
+#asideContent{
+		float:right;
+		width:100%;
+		border:2px solid blue;
+		padding:10px 0;
+		margin-top:auto;
+		margin-bottom:auto;
+		margin-right:0px;
+		font-size:.8em;
+		vertical-align:bottom;
+		
+}
+#values{
+	border:2px solid black;
+	float:right;
+	margin:0 3% 0 0;
+	 display:inline;
+}
+#values h3{
+		margin:20%;
+		color:black;
+		font-size:1.1em;
 }
 
 #aside h3 { margin: 0; }
@@ -92,5 +193,5 @@ h4{
 	clear: left;
 	background: #ccc;
 	text-align: right;
-	padding: 20px;
+	padding: 5px;
 	height: 1%;
